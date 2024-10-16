@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="search" type="text">
+    <ul class="oooo">
+        <li>home</li>
+        <li>about</li>
+        <li>this</li>
+        <li>what</li>
+        <li>is</li>
+        <li>thiss</li>
+        <li>that</li>
+        <li>whent</li>
+        <li>lol</li>
+        <li>lucky</li>
+        <li>wow</li>
+        <li>i am a mexanik</li>
+        <li>shet bro</li>
+        <li>what are you doing</li>
+        <li>did</li>
+        <li>downland</li>
+    </ul>
+    <script>
+        document.querySelector('#search').oninput=function(){
+            let val=this.value.trim();
+            let array=document.querySelectorAll('li');
+            if(val!=''){
+                array.forEach(function(item){
+                    if(item.innerText.search(val)!=-1){
+                        item.classList.remove('hidden')
+                    }else{
+                        item.classList.add('hidden')
+                    }
+                })
+            }else{
+                array.forEach(function(item){
+                    item.classList.remove('hidden')
+                })
+            }
+        }
+    </script>
+</body>
+</html>
